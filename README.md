@@ -1,6 +1,6 @@
-# dotfiles
+# Dotfiles
 My dotfiles based on the Catppuccin color pallete
 
-##Including
+## Including
 - Neovim
 - Firefox
