@@ -9,3 +9,11 @@ require("nvim-lsp-installer").setup({
         }
     }
 })
+
+
+
+require"lspconfig".pyright.setup{}
+require"lspconfig".cssls.setup{}
+require"lspconfig".clangd.setup{}
+require"lspconfig".omnisharp.setup{}
+--require"lspconfig".sumneko_lua.setup{}
