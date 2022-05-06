@@ -47,7 +47,7 @@ require "paq" {
 	  	--'itchyny/lightline.vim',
 	  	'goolord/alpha-nvim',
 	  	"akinsho/toggleterm.nvim",
-		"noib3/nvim-cokeline"
+		"noib3/nvim-cokeline",
 
 	  	"lervag/vimtex",
 	  	"mattn/efm-langserver",
