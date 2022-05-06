@@ -1,6 +1,7 @@
 	--packages
 require "paq" {
 	  	"savq/paq-nvim",
+		'wbthomason/packer.nvim',
 	
 		--some shit
 	  	"nvim-telescope/telescope.nvim",
@@ -39,13 +40,14 @@ require "paq" {
 	 	"rcarriga/nvim-notify",
 		"nvim-lualine/lualine.nvim",
 	  	'folke/which-key.nvim', 
-	 	'kdheepak/tabline.nvim',
+	 	'akinsho/bufferline.nvim',
 		--"glepnir/dashboard-nvim",
 	  	"karb94/neoscroll.nvim",
-		--'feline-nvim/feline.nvim',
+		'feline-nvim/feline.nvim',
 	  	--'itchyny/lightline.vim',
 	  	'goolord/alpha-nvim',
 	  	"akinsho/toggleterm.nvim",
+		"noib3/nvim-cokeline"
 
 	  	"lervag/vimtex",
 	  	"mattn/efm-langserver",
