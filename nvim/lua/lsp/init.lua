@@ -1,10 +1,10 @@
 require("nvim-lsp-installer").setup({
-    ensure_installed = { "rust_analyzer", "sumneko_lua" }, -- ensure these servers are always installed
+   ensure_installed = { "rust_analyzer", "sumneko_lua" }, -- ensure these servers are always installed
    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
-    ui = {
+   	ui = {
         icons = {
             server_installed = "✓",
-            server_pending = "➜",
+            pending = "➜",
             server_uninstalled = "✗"
         }
     }
@@ -14,6 +14,6 @@ require("nvim-lsp-installer").setup({
 
 require"lspconfig".pyright.setup{}
 require"lspconfig".cssls.setup{}
-require"lspconfig".clangd.setup{}
+--require"lspconfig".clangd.setup{}
 require"lspconfig".omnisharp.setup{}
 --require"lspconfig".sumneko_lua.setup{}
