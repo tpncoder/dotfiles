@@ -6,6 +6,7 @@ My dotfiles based on the Catppuccin color pallete
 - Firefox
 
 ## Screenshots
+### Screenshots may be outdated
 <p align = center>Neovim</p>
 <img src = "https://github.com/tpncoder/dotfiles/blob/main/WindowsTerminal_zkE3foMSPE.png">
 <br>
