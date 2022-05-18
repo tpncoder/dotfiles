@@ -18,7 +18,6 @@ end
 vim.cmd [[packadd packer.nvim]]
 --packages
 
-vim.notify = require("notify")
 
 return require('packer').startup(function()
   	  	use "savq/paq-nvim"
