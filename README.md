@@ -18,4 +18,4 @@ My dotfiles based on the Catppuccin color pallete
 <br>
 
 <p align = center>Firefox</p>
-<img src = "https://github.com/tpncoder/dotfiles/blob/windows/main/firefox_wJcJf4A5Yc.png">
+<img src = "https://github.com/tpncoder/dotfiles/blob/windows/main/firefox_wJcJf4A5Yc.png](https://github.com/tpncoder/dotfiles/blob/main/assets/firefox_wJcJf4A5Yc.png">
