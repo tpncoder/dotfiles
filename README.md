@@ -8,12 +8,14 @@ My dotfiles based on the Catppuccin color pallete
 ## Screenshots
 ### Screenshots may be outdated
 <p align = center>Neovim</p>
-<img src = "https://github.com/tpncoder/dotfiles/blob/main/WindowsTerminal_zkE3foMSPE.png">
+<img src = "https://github.com/tpncoder/dotfiles/blob/windows/assets/Hyper_xv2OOrdGXn.png">
 <br>
-<img src = "https://github.com/tpncoder/dotfiles/blob/main/WindowsTerminal_29dVubZ5rD.png">
+<img src = "https://github.com/tpncoder/dotfiles/blob/windows/assets/Hyper_mBk3STuXzS.png">
 <br>
-<img src = "https://github.com/tpncoder/dotfiles/blob/main/WindowsTerminal_0FSh1X7Cs9.png">
+<img src = "https://github.com/tpncoder/dotfiles/blob/windows/assets/Hyper_NS9SNgnDDh.png">
+<br>
+<img src = "https://github.com/tpncoder/dotfiles/blob/windows/assets/Hyper_M7WB9qIsUg.png">
 <br>
 
 <p align = center>Firefox</p>
-<img src = "https://github.com/tpncoder/dotfiles/blob/main/firefox_WzNqNd7CXJ.png">
+<img src = "https://github.com/tpncoder/dotfiles/blob/windows/assets/firefox_wJcJf4A5Yc.png">
