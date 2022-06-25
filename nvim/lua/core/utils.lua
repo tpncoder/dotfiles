@@ -11,6 +11,3 @@ local opt = vim.opt
 --opt.foldmethod = "indent"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.cmd[[setlocal foldignore=]]
-
-require("nvim-lsp-installer").setup {}
-require("which-key").setup {}
