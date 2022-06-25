@@ -1,4 +1,10 @@
-require'impatient'.enable_profile()
+local status_ok, impatient = pcall(require, "impatient")
+if not status_ok then
+  return
+end
+
+impatient.enable_profile()
+
 require('lspkind').init({
     -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
     mode = 'symbol_text',
@@ -34,3 +40,7 @@ require('lspkind').init({
       TypeParameter = ""
     },
 })
+
+    
+require("nvim-lsp-installer").setup {}
+require("which-key").setup {}
