@@ -4,6 +4,11 @@ My dotfiles based on the Catppuccin color pallete
 ## Including
 - [Neovim](https://github.com/tpncoder/sane.nvim)
 - Firefox
+- Polybar
+- i3wm
+- Picom
+- Kitty
+- And much more....
 
 ## Screenshots
 ### Screenshots may be outdated
