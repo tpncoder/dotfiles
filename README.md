@@ -1,5 +1,5 @@
 # Dotfiles
-My dotfiles based on the Catppuccin color pallete
+My ugly dotfiles
 
 ## Including
 - [Neovim](https://github.com/tpncoder/sane.nvim)
