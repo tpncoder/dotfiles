@@ -1,7 +1,7 @@
 configuration{
     modi: "run,drun,window";
     lines: 7;
-    font: "Liga SFMono Nerd Font 14";
+    font: "JetBrainsMono Nerd Font 14";
     show-icons: false;
     icon-theme: "Papirus Dark";
     terminal: "kitty";
@@ -16,11 +16,9 @@ configuration{
     sidebar-mode: false;
 }
 
-@theme "catppuccin"
-
 element-text, element-icon , mode-switcher {
     background-color: #101415;
-    text-color:       inherit;
+    text-color:       #fff;
 }
 
 window {
@@ -44,7 +42,7 @@ inputbar {
 prompt {
     background-color: #101415;
     padding: 12px;
-    text-color: #6791c9;
+    text-color: #fff;
     border-radius: 10%;
     margin: 20px 0px 0px 20px;
 }
@@ -57,7 +55,7 @@ textbox-prompt-colon {
 entry {
     padding: 12px;
     margin: 20px 10px 0px 5px;
-    text-color: @fg-col;
+    text-color: #fff;
     background-color: #151a1c;
 	border-radius: 10%;
 }
@@ -73,7 +71,7 @@ listview {
 element {
     padding: 5px;
     background-color: #101415;
-    text-color: @fg-col  ;
+    text-color: #fff;
 }
 
 element-icon {
@@ -82,7 +80,7 @@ element-icon {
 
 element selected {
     background-color: #101415  ;
-    text-color: @fg-col2  ;
+    text-color: #6791c9;
 }
 
 mode-switcher {
