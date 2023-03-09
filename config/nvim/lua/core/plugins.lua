@@ -1,132 +1,202 @@
-local fn = vim.fn
+return {
+'lewis6991/impatient.nvim',
+{ 'freddiehaddad/feline.nvim' },
+{ 
+	"nvim-telescope/telescope.nvim",
+	event = "VeryLazy",
+	cmd = "Telescope"
+},
+{
+  'VonHeikemen/lsp-zero.nvim',
+  branch = 'v1.x',
+  dependencies = {
+    -- LSP Support
+    {'neovim/nvim-lspconfig'},             -- Required
+    {'williamboman/mason.nvim'},           -- Optional
+    {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
--- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},         -- Required
+    {'hrsh7th/cmp-nvim-lsp'},     -- Required
+    {'hrsh7th/cmp-buffer'},       -- Optional
+    {'hrsh7th/cmp-path'},         -- Optional
+    {'saadparwaiz1/cmp_luasnip'}, -- Optional
+    {'hrsh7th/cmp-nvim-lua'},     -- Optional
+
+    -- Snippets
+    {'rafamadriz/friendly-snippets'}, -- Optional
   }
-  print "Installing packer close and reopen Neovim..."
-  vim.cmd [[packadd packer.nvim]]
-end
-
-vim.cmd [[packadd packer.nvim]]
---packages
-
-
-return require('packer').startup(function()
-		use 'wbthomason/packer.nvim'
-		use 'lewis6991/impatient.nvim'
-	
-		--some shit
-	  	use "nvim-telescope/telescope.nvim"
-	  	use "nvim-treesitter/nvim-treesitter"
-	 	use "kyazdani42/nvim-tree.lua"
-	 	use "kyazdani42/nvim-web-devicons"
-	  	use "nvim-lua/plenary.nvim"
-	  	use "folke/which-key.nvim"
-
-		--colorschemes
-	  	use "catppuccin/nvim"
-	  	use "folke/tokyonight.nvim"
-		use 'navarasu/onedark.nvim'
-		use "ellisonleao/gruvbox.nvim"
-		use 'NTBBloodbath/doom-one.nvim'
-		use 'tomasiser/vim-code-dark'
-
-		--completion and lsp
-	  	use "hrsh7th/vim-vsnip"
-	  	use "hrsh7th/vim-vsnip-integ"
-	  	use "neovim/nvim-lspconfig"
-	  	use "hrsh7th/cmp-nvim-lsp"
-	  	use "hrsh7th/cmp-buffer"
-	  	use "hrsh7th/cmp-path"
-	  	use "hrsh7th/cmp-cmdline"
-	  	use "hrsh7th/nvim-cmp"
-	  	use "L3MON4D3/LuaSnip"
-	  	use "saadparwaiz1/cmp_luasnip"
-	  	use "williamboman/nvim-lsp-installer"
-		use {
-			"folke/trouble.nvim", 
-			requires = "kyazdani42/nvim-web-devicons", 
-			config = function()
-			require("trouble").setup()
-		end,
-		}
-		use 'onsails/lspkind.nvim'
-		use 'tami5/lspsaga.nvim'
-		use "rafamadriz/friendly-snippets"
-
-		--icing of the cake
-		use "nvim-lualine/lualine.nvim"
-		use {
-				'akinsho/bufferline.nvim', 
-				tag = "v2.*", 
-				requires = 'kyazdani42/nvim-web-devicons'
-		}
-	  	use 'goolord/alpha-nvim'
-	  	use "akinsho/toggleterm.nvim"
-		use {
-				"christianchiarulli/nvim-gps", 
-				branch = "text_hl"
-		}
-		use "stevearc/dressing.nvim"
-		use({
-				"ziontee113/icon-picker.nvim",
-				config = function()
-						require("icon-picker")
-				end,
-		})
-
-		use 'ellisonleao/glow.nvim'
-		use "mhartington/formatter.nvim"
-  	  	use "alvan/vim-closetag"
-	  	use "jiangmiao/auto-pairs"
-		use {
-				'Pocco81/TrueZen.nvim',
-				opt = true,
-				event = "WinEnter",
-				config = function ()
-				require("true-zen").setup()
-			end,
-		}
-        use "lukas-reineke/indent-blankline.nvim"
-	
-		--debugging
-		use 'mfussenegger/nvim-dap'
-		use "rcarriga/nvim-dap-ui"
-		use "Pocco81/DAPInstall.nvim"
-
-		--Go
-		use {
-				'ray-x/go.nvim',
-				opt = true,
-				event = "InsertEnter",
-				after = "nvim-cmp",
-				config = function ()
-					require('go').setup()
-			end
-		}
-	
-		--Rust
-		use {
-			"simrat39/rust-tools.nvim",
-			config = function()
-				require('rust-tools').setup()
-			end,
-		}
-		
-		use {
-    			'saecki/crates.nvim',
-    			tag = 'v0.2.1',
-    			requires = { 'nvim-lua/plenary.nvim' },
-    			config = function()
-        			require('crates').setup()
-    			end,
-		}
-end)
+},
+"typicode/bg.nvim",
+ 'AlphaTechnolog/pywal.nvim',
+{
+  "nvim-neo-tree/neo-tree.nvim"
+},
+{
+        "nvim-neorg/neorg",
+        build = ":Neorg sync-parsers",
+        opts = {
+            load = {
+                ["core.defaults"] = {}, -- Loads default behaviour
+                ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+                ["core.norg.dirman"] = { -- Manages Neorg workspaces
+                    config = {
+                        workspaces = {
+                            notes = "~/notes",
+                        },
+                    },
+                },
+								["core.norg.completion"] = {
+									config = {
+										engine = "nvim-cmp"
+									}
+            	}
+						},
+        },
+        dependencies = { { "nvim-lua/plenary.nvim" } },
+    },
+{ 'Everblush/nvim', name = 'everblush' },
+{
+	"nvim-treesitter/nvim-treesitter",
+	event = "BufReadPre"
+},
+{
+	'tjdevries/colorbuddy.nvim'
+},
+{
+	"kyazdani42/nvim-tree.lua",
+	cmd = "NvimTreeToggle"
+},
+"kyazdani42/nvim-web-devicons",
+{
+	"nvim-lua/plenary.nvim",
+	event = "VeryLazy"
+},
+{
+	"L3MON4D3/LuaSnip",
+	-- follow latest release.
+	version = "<CurrentMajor>.*",
+	-- install jsregexp (optional!).
+	build = "make install_jsregexp"
+},
+{
+	"catppuccin/nvim",
+	lazy = true
+},
+{
+	'NvChad/nvim-colorizer.lua',
+	event = "VeryLazy",
+	config = function ()
+		require 'colorizer'.setup()
+	end
+},
+{
+	"ellisonleao/glow.nvim", 
+	cmd = "Glow",
+	ft = "md",
+	config = true,
+},
+{
+	"evanleck/vim-svelte",
+	ft="svelte"
+},
+{
+	'mrjones2014/legendary.nvim',
+	cmd = "Legendary"
+},
+{ 
+	"ziontee113/icon-picker.nvim",
+	config = true
+},
+'decaycs/decay.nvim',
+{
+	"neovim/nvim-lspconfig",
+	event = "VeryLazy"
+},
+{
+	"folke/trouble.nvim" ,
+	cmd = "Trouble",
+},
+'tami5/lspsaga.nvim',
+'akinsho/bufferline.nvim', 
+"rebelot/heirline.nvim",
+'goolord/alpha-nvim',
+{
+	"akinsho/toggleterm.nvim",
+	cmd = "Toggleterm"
+},
+{
+	"ziontee113/icon-picker.nvim",
+	cmd = "IconPickerInsert"
+},
+{
+	'lewis6991/gitsigns.nvim',
+	event = "BufReadPre"
+},
+{ 
+	'numToStr/Comment.nvim',
+	event = "InsertEnter"
+},
+{
+	"alvan/vim-closetag",
+	event = "InsertEnter"
+},
+{
+	"jiangmiao/auto-pairs",
+},
+"lukas-reineke/indent-blankline.nvim",
+{
+	"folke/neodev.nvim",
+	event = "InsertEnter",
+	config = true
+},
+{ 
+	"folke/which-key.nvim", 
+	lazy = true,
+	cmd = "WhichKey"
+},
+{
+	"rcarriga/nvim-notify",
+	event = "VeryLazy",
+	config = function ()
+		vim.notify = require("notify")
+	end,	
+},
+{ 
+	"folke/noice.nvim",
+	event = "VeryLazy",
+	dependencies = {
+		'MunifTanjim/nui.nvim'
+	}
+},
+{
+	"utilyre/barbecue.nvim",
+	event = "BufReadPost",
+	dependencies = {
+		"neovim/nvim-lspconfig",
+		"SmiteshP/nvim-navic",
+	},
+	config = true
+},
+{ 
+	"hrsh7th/nvim-cmp", 
+	event = "InsertEnter",
+	dependencies = {
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-cmdline",
+		"saadparwaiz1/cmp_luasnip",
+		"rafamadriz/friendly-snippets",
+	},
+},
+'onsails/lspkind.nvim',
+{ 
+	"folke/todo-comments.nvim", 
+	event = "VeryLazy"
+},
+{ 
+	"stevearc/dressing.nvim", 
+	event = "VeryLazy" 
+},
+}

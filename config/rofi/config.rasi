@@ -1,101 +1,54 @@
-configuration{
-    modi: "run,drun,window";
-    lines: 7;
-    font: "JetBrainsMono Nerd Font 14";
-    show-icons: false;
-    icon-theme: "Papirus Dark";
-    terminal: "kitty";
-    drun-display-format: "{icon} {name}";
-    location: 0;
-    disable-history: false;
-    hide-scrollbar: true;
-    display-drun: "";
-    display-run: "   Run ";
-    display-window: " 﩯  Window";
-    display-Network: " 󰤨  Network";
-    sidebar-mode: false;
+configuration {
+  modi: "drun";
+  display-drun: "";
+  show-icons: true;
+  drun-display-format: "{icon}  {name}";
+  font: "CaskaydiaCove Nerd Font Mono 10";
 }
 
-element-text, element-icon , mode-switcher {
-    background-color: #101415;
-    text-color:       #fff;
+@theme "/dev/null"
+
+* {
+  bg: #0A1114;
+  fg: #dadada;
+  al: #404749;
+  border-radius: 0.2em;
+  background-color: @bg;
+  text-color: @fg;
 }
 
 window {
-    height: 360px;
-    border: 3px;
-    border-color: #6791c9;
-    background-color: #101415;
+  location: center;
+  width: 25%;
+  spacing: 0;
+  children: [ box ];
 }
 
-mainbox {
-    background-color: #101415;
-}
-
-inputbar {
-    children: [prompt,entry];
-    background-color: #101415;
-    border-radius: 5px;
-    padding: 2px;
-}
-
-prompt {
-    background-color: #101415;
-    padding: 12px;
-    text-color: #fff;
-    border-radius: 10%;
-    margin: 20px 0px 0px 20px;
-}
-
-textbox-prompt-colon {
-    expand: false;
-    str: ":";
+box {
+  padding: 0.75em;
+  spacing: 0.5em;
+  children: [ entry, listview ];
 }
 
 entry {
-    padding: 12px;
-    margin: 20px 10px 0px 5px;
-    text-color: #fff;
-    background-color: #151a1c;
-	border-radius: 10%;
-}
-
-listview {
-    border: 0px 0px 0px;
-    padding: 6px 10px 0px;
-    margin: 10px 40px 0px 20px;
-    columns: 1;
-    background-color: #101415;
+  placeholder: "Search...";
+  placeholder-color: @al;
+  padding: 0.75em;
+  expand: false;
 }
 
 element {
-    padding: 5px;
-    background-color: #101415;
-    text-color: #fff;
+  text-color: @al;
+  padding: 0.75em;
 }
-
-element-icon {
-    size: 25px;
-}
-
 element selected {
-    background-color: #101415  ;
-    text-color: #6791c9;
+  text-color: @fg;
+}
+element-text, element-icon {
+  background-color: inherit;
+  text-color: inherit;
 }
 
-mode-switcher {
-    spacing: 0;
-  }
-
-button {
-    padding: 10px;
-    background-color: #101415;
-    text-color: @grey;
-    vertical-align: 0.5; 
-    horizontal-align: 0.5;
-}
-
-button selected {
-  background-color: #101415;
-  text-color: @blue;
+listview {
+  lines: 10;    
 }

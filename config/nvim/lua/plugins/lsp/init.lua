@@ -1,40 +1,19 @@
-require("nvim-lsp-installer").setup({
-   ensure_installed = { "cssls", "sumneko_lua", "clangd", "rust-analyzer", "gopls" }, -- ensure these servers are always installed
-   automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
-   	ui = {
-        icons = {
-            server_installed = "✓",
-            pending = "➜",
-            server_uninstalled = "✗"
-        }
-    }
-})
-
-require"lspconfig".pyright.setup{}
-require"lspconfig".cssls.setup{}
-require"lspconfig".clangd.setup{}
-require"lspconfig".rust_analyzer.setup{}
-require"lspconfig".gopls.setup{}
-require"lspconfig".sumneko_lua.setup{}
-
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = false,
     update_in_insert = false,
-    virtual_text = true
+    virtual_text = false
   })
 
-  local lspsaga = require 'lspsaga'
+local lspsaga = require 'lspsaga'
 lspsaga.setup { -- defaults ...
   debug = false,
   use_saga_diagnostic_sign = true,
-  -- diagnostic sign
   error_sign = "",
   warn_sign = "",
   hint_sign = "",
   infor_sign = "",
   diagnostic_header_icon = "   ",
-  -- code action title icon
   code_action_icon = " ",
   code_action_prompt = {
     enable = true,
@@ -78,3 +57,15 @@ vim.diagnostic.config({
     signs = true,
     float = { border = "single" },
 })
+
+local lsp = require('lsp-zero').preset({
+  name = 'minimal',
+  set_lsp_keymaps = true,
+  manage_nvim_cmp = true,
+  suggest_lsp_servers = false,
+})
+
+-- (Optional) Configure lua language server for neovim
+lsp.nvim_workspace()
+
+lsp.setup()

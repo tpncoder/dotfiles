@@ -1,20 +1,11 @@
-vim.opt.background = "dark"
-
-local function colorChangeonTime()
-	local tableTime = os.date("*t")
-	local hour = tableTime.hour
-	if hour < 14 then
-		vim.cmd[[color tokyonight]]
-	elseif hour >= 14 and hour < 16 then
-		vim.g.catppuccin_flavour = "frappe"
-		vim.cmd[[color catppuccin]]
-	elseif hour >= 16 and hour < 18 then
-		vim.g.catppuccin_flavour = "macchiato"
-		vim.cmd[[color catppuccin]]
-	elseif hour >= 18 then
-		vim.g.catppuccin_flavour = "mocha"
-		vim.cmd[[color catppuccin]]
-	end
-end
-
-colorChangeonTime()
+vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
+vim.cmd [[highlight statusline guibg=nvim_treebg guifg=nvim_treebg]]
+vim.api.nvim_set_hl(0, 'WinBarPath', { bg = '#dedede', fg = '#363636' })
+vim.api.nvim_set_hl(0, 'WinBarModified', { bg = '#dedede', fg = '#ff3838' })
+vim.cmd('colorscheme everblush')
+vim.cmd [[highlight VertSplit guibg=NONE]]
